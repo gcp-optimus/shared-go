@@ -75,11 +75,6 @@ func zapLogger(c *fiber.Ctx) error {
 			zap.ByteString("Header", req.Header.Header()),
 			zap.ByteString("Body", req.Body()),
 			zap.Int("Code", code))
-	} else {
-		logger.Info("",
-			zap.String("Method", c.Method()),
-			zap.ByteString("URI", req.URI().FullURI()),
-			zap.Int("Code", code))
 	}
 
 	return err
