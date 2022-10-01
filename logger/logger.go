@@ -95,18 +95,18 @@ func levelEncode(l zapcore.Level, enc zapcore.PrimitiveArrayEncoder) {
 }
 
 func Info(msg string, fields ...zapcore.Field) {
-	logger.Info(msg, fields...)
+	logger.Info("[I] "+msg, fields...)
 }
 
 func Warn(msg string, fields ...zapcore.Field) {
-	logger.Warn(msg, fields...)
+	logger.Warn("[W] "+msg, fields...)
 }
 
 func Error(msg string, fields ...zapcore.Field) {
-	logger.Error(msg, fields...)
+	logger.Error("[E] "+msg, fields...)
 }
 
 func Critical(msg string, fields ...zapcore.Field) {
-	logger.DPanic(msg, fields...)
+	logger.DPanic("[C] "+msg, fields...)
 	os.Exit(1)
 }

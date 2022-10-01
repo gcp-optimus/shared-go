@@ -15,11 +15,12 @@ type fiberImpl struct {
 
 func GetFiberModule(name string, port string) FiberServer {
 	app := fiber.New(fiber.Config{
-		ReduceMemoryUsage: true,
-		Prefork:           false,
-		CaseSensitive:     true,
-		StrictRouting:     true,
-		AppName:           name,
+		ReduceMemoryUsage:     true,
+		Prefork:               false,
+		CaseSensitive:         true,
+		StrictRouting:         true,
+		AppName:               name,
+		DisableStartupMessage: true,
 	})
 
 	app.Use(zapLogger)
